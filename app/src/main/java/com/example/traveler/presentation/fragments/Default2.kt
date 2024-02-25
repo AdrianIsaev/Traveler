@@ -1,0 +1,44 @@
+package com.example.traveler.presentation.fragments
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
+
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import com.example.traveler.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+
+class Default2 : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_default2, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentHost) as NavHostFragment
+        val navController = navHostFragment.navController
+        val navigationBar = view.findViewById<BottomNavigationView>(R.id.bottom_navA)
+        val appBarConfiguration = AppBarConfiguration.Builder(navController.graph).build()
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarJI)
+
+        NavigationUI.setupWithNavController(
+            toolbar,
+            navController,
+            appBarConfiguration
+        )
+        NavigationUI.setupWithNavController(
+            navigationBar,
+            navController
+        )
+    }
+}
