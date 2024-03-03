@@ -1,11 +1,15 @@
 package com.example.traveler.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toolbar
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -27,6 +31,14 @@ class Default : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val windowManager = requireActivity().getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val screenHeight = displayMetrics.heightPixels
+        val halfScreenHeight = screenHeight / 5
+        val imageView = view.findViewById<AppCompatImageView>(R.id.imageFilterView)
+        val imageView2 = view.findViewById<AppCompatImageView>(R.id.imageFilterView2)
+        imageView.maxHeight = halfScreenHeight
+        imageView2.maxHeight = halfScreenHeight
     }
 }

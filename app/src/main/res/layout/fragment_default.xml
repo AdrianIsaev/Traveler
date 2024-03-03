@@ -6,4 +6,30 @@
     android:background="@drawable/gradient"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragments.Default">
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageFilterView"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageFilterView2"
+        android:layout_margin="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hhh">
+    </androidx.appcompat.widget.AppCompatImageView>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageFilterView2"
+        android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imageFilterView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/hhh">
+        </androidx.appcompat.widget.AppCompatImageView>
+    </androidx.constraintlayout.widget.ConstraintLayout>

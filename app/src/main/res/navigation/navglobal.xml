@@ -10,5 +10,4 @@
         android:name="com.example.traveler.presentation.fragments.Default2"
         android:label="fragment_default2"
         tools:layout="@layout/fragment_default2" />
-
 </navigation>
