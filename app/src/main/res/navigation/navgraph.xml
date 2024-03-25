@@ -14,7 +14,11 @@
         android:id="@+id/mapFragment"
         android:name="com.example.traveler.presentation.fragments.Map"
         android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_addPublicationFragment2"
+            app:destination="@id/addPublicationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registeredFragment"
         android:name="com.example.traveler.presentation.fragments.Registered"
@@ -40,4 +44,13 @@
         android:name="com.example.traveler.presentation.activity.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/addPublicationFragment"
+        android:name="com.example.traveler.presentation.fragments.AddPublicationFragment"
+        android:label="fragment_add_publication"
+        tools:layout="@layout/fragment_add_publication2" >
+        <action
+            android:id="@+id/action_addPublicationFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
 </navigation>

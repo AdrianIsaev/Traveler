@@ -9,5 +9,12 @@
         android:id="@+id/default2"
         android:name="com.example.traveler.presentation.fragments.Default2"
         android:label="fragment_default2"
-        tools:layout="@layout/fragment_default2" />
+        tools:layout="@layout/fragment_default2" >
+        <action
+            android:id="@+id/action_default2_to_addPublicationFragment"
+            app:destination="@id/addPublicationFragment" />
+    </fragment>
+
+
+
 </navigation>

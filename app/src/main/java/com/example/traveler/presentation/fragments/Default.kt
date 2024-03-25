@@ -31,7 +31,7 @@ class Default : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val windowManager = requireActivity().getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        /*val windowManager = requireActivity().getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         val screenHeight = displayMetrics.heightPixels
@@ -39,6 +39,6 @@ class Default : Fragment() {
         val imageView = view.findViewById<AppCompatImageView>(R.id.imageFilterView)
         val imageView2 = view.findViewById<AppCompatImageView>(R.id.imageFilterView2)
         imageView.maxHeight = halfScreenHeight
-        imageView2.maxHeight = halfScreenHeight
+        imageView2.maxHeight = halfScreenHeight*/
     }
 }

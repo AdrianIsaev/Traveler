@@ -9,27 +9,48 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageFilterView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageFilterView2"
-        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@id/imageFilterView3"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:layout_height="wrap_content"
-        android:src="@drawable/hhh">
+        android:src="@drawable/nature">
     </androidx.appcompat.widget.AppCompatImageView>
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageFilterView2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
             app:layout_constraintStart_toEndOf="@+id/imageFilterView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/imageFilterView3"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:layout_height="wrap_content"
-
-            android:src="@drawable/hhh">
+            android:layout_height="0dp"
+            android:src="@drawable/nature">
         </androidx.appcompat.widget.AppCompatImageView>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageFilterView3"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageFilterView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_height="0dp"
+        android:src="@drawable/nature">
+    </androidx.appcompat.widget.AppCompatImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>
