@@ -4,43 +4,47 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.traveler.R
 import com.example.traveler.data.room.storage.entity.LocalRosterModel
+import com.example.traveler.data.room.storage.entity.Publication
 import com.example.traveler.databinding.ListItemLayoutBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
-class ProjectAdapter(private val context: Context) :
-    RecyclerView.Adapter<ProjectAdapter.ViewHolder>() {
-    private var localRosterModelList: List<LocalRosterModel> = ArrayList()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = DataBindingUtil.inflate<ListItemLayoutBinding>(
-            LayoutInflater.from(parent.context),
-            R.layout.list_item_layout,
-            parent,
-            false
-        )
-        return ViewHolder(binding)
-    }
+class ProjectAdapter : RecyclerView.Adapter<ProjectAdapter.Holder>(){
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (localRosterModelList.isNotEmpty()) {
-            val rosterModel = localRosterModelList[position]
-            holder.binding.localRosterModel = rosterModel
-            holder.binding.executePendingBindings()
+   private val arrayRoster = ArrayList<Publication>()
+
+    class Holder(view: View) : RecyclerView.ViewHolder(view){
+        private val binding = ListItemLayoutBinding.bind(view)
+
+        fun bind(roster: Publication) = with(binding){
+
+            title.text = roster.description
+            author.text = roster.author
+            description.text = roster.title
         }
-    }
 
-    fun setProjects(projects: List<LocalRosterModel>) {
-        localRosterModelList = projects
-        notifyDataSetChanged()
+    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val view = LayoutInflater.from(parent.context)
+
+            .inflate(R.layout.list_item_layout, parent, false)
+
+        return Holder(view)
     }
 
     override fun getItemCount(): Int {
-        return localRosterModelList.size
+        return arrayRoster.size
     }
 
-    inner class ViewHolder(val binding: ListItemLayoutBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        holder.bind(arrayRoster[position])
+
+      }
+
+    fun addRosterLine(roster: Publication){
+        arrayRoster.add(roster)
+        notifyDataSetChanged()
+    }
 }

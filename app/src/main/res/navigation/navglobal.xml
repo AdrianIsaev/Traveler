@@ -9,12 +9,31 @@
         android:id="@+id/default2"
         android:name="com.example.traveler.presentation.fragments.Default2"
         android:label="fragment_default2"
-        tools:layout="@layout/fragment_default2" >
+        tools:layout="@layout/fragment_default2" />
+    <fragment
+        android:id="@+id/auth"
+        android:name="com.example.traveler.presentation.fragments.Auth"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
         <action
-            android:id="@+id/action_default2_to_addPublicationFragment"
-            app:destination="@id/addPublicationFragment" />
+            android:id="@+id/action_auth_to_register"
+            app:destination="@id/register" />
+        <action
+            android:id="@+id/action_auth_to_default2"
+            app:destination="@id/default2" />
     </fragment>
-
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.traveler.presentation.fragments.Register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_to_auth"
+            app:destination="@id/auth" />
+        <action
+            android:id="@+id/action_register_to_default2"
+            app:destination="@id/default2" />
+    </fragment>
 
 
 </navigation>

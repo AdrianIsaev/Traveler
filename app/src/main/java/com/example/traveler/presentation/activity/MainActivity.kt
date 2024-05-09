@@ -1,5 +1,6 @@
 package com.example.traveler.presentation.activity
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -18,11 +19,19 @@ import com.google.android.material.navigation.NavigationBarView
 import com.yandex.mapkit.MapKitFactory
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         MapKitFactory.setApiKey("4f4b1009-668e-4a48-9fed-165e86e8f8ba")
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
 
     }
+
+    private fun init() = with(binding) {
+
+    }
+
 }

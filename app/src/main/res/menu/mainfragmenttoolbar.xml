@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-            android:id="@+id/tool_share"/>
         <item android:title="Обратная связь"
             android:id="@+id/tool_feedback"/>
         <item android:title="Выйти"
