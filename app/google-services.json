@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292869889094",
+    "project_id": "traveler-bbef7",
+    "storage_bucket": "traveler-bbef7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292869889094:android:b747a4a03db52ab0713e47",
+        "android_client_info": {
+          "package_name": "com.example.traveler"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6L8jTe3LZk3gV5OsNL8lOd0oIY59Rj4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
