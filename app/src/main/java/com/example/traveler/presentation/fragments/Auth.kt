@@ -13,17 +13,12 @@ import com.example.traveler.R
 import com.example.traveler.databinding.FragmentAuthBinding
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
-
 class Auth : Fragment() {
     private lateinit var binding: FragmentAuthBinding
     private lateinit var navController: NavController
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,7 +27,6 @@ class Auth : Fragment() {
         binding = FragmentAuthBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         var prefs = requireContext().getSharedPreferences("NAME", Context.MODE_PRIVATE)
         /*if (prefs.getString("userName", "Denied") == "Success") {
@@ -63,12 +57,9 @@ class Auth : Fragment() {
                         Toast.makeText(requireContext(), "failed", Toast.LENGTH_LONG).show()
                     }
             }
-
         }
         registerButton.setOnClickListener {
             navController.navigate(R.id.action_auth_to_register)
         }
     }
-
-
 }

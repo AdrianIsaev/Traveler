@@ -6,22 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
 import androidx.lifecycle.ViewModelProvider
 import com.example.traveler.R
-import com.example.traveler.data.repository.LocalRosterRepo
-import com.example.traveler.data.room.storage.entity.LocalRosterModel
 import com.example.traveler.data.room.storage.entity.Publication
 import com.example.traveler.databinding.FragmentAddPublication2Binding
 import com.example.traveler.presentation.viewmodel.AddPublicationViewModel
-import com.example.traveler.presentation.viewmodel.AddPublicationViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.Firebase
-import com.google.firebase.database.core.Context
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AddPublicationFragment : Fragment() {
@@ -41,7 +33,6 @@ class AddPublicationFragment : Fragment() {
         requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navA).visibility = View.GONE
         var prefs = requireContext().getSharedPreferences("NAME", android.content.Context.MODE_PRIVATE)
         author = prefs.getString("nameGlobal", "noName")?: "noName"
-
         binding.buttonSaveAdd.setOnClickListener {
             val imageUrl = "empty"
             val title = binding.editTextAdd.text.toString()

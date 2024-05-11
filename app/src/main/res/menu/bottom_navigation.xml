@@ -4,12 +4,12 @@
         android:id="@+id/defaultFragment"
         android:title=""
         android:icon="@drawable/home_account"
-        android:iconTint="@color/black"/>
+        android:iconTint="@color/dark_blue"/>
     <item
         android:id="@+id/mapFragment"
         android:title=""
         android:icon="@drawable/map_outline"
-        android:iconTint="@color/black"/>
+        android:iconTint="@color/dark_blue"/>
     <item
         android:id="@+id/rosterFragment"
         android:title=""
@@ -20,5 +20,5 @@
         android:id="@+id/settingsFragment"
         android:title=""
         android:icon="@drawable/cogs"
-        android:iconTint="@color/black"/>
+        android:iconTint="@color/dark_blue"/>
 </menu>

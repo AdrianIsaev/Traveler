@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.traveler.R
 import com.example.traveler.databinding.FragmentMapBinding
 import com.example.traveler.presentation.viewmodel.MapViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yandex.mapkit.MapKit
 import com.yandex.mapkit.MapKitFactory
@@ -45,6 +46,7 @@ class Map : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val buttonNavigate = binding.createButton
+        requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navA).visibility = View.VISIBLE
         var prefs = requireContext().getSharedPreferences("NAME", Context.MODE_PRIVATE).edit()
         viewModel.message.observe(activity as LifecycleOwner, {
 
@@ -72,7 +74,6 @@ class Map : Fragment() {
                 ).show()
             }
     }
-
     override fun onStop() {
         super.onStop()
         MapKitFactory.getInstance().onStop()

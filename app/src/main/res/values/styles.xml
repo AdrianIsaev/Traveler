@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="BottomNavigationStyle">
-        <item name="android:background">@color/bottomNavigation_color</item>
+        <item name="android:background">@color/dark_blue</item>
+    </style>
+
+    <style name="NavigationToolBarStyle">
+        <item name="android:background">@color/dark_blue</item>
     </style>
 </resources>

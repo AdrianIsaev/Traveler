@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/defaultFragment"
         android:name="com.example.traveler.presentation.fragments.Default"
-        android:label="fragment_default"
+        android:label="Home"
         tools:layout="@layout/fragment_default" />
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.traveler.presentation.fragments.Map"
-        android:label="fragment_map"
+        android:label="Map"
         tools:layout="@layout/fragment_map" >
         <action
             android:id="@+id/action_mapFragment_to_addPublicationFragment2"
@@ -27,12 +27,12 @@
     <fragment
         android:id="@+id/rosterFragment"
         android:name="com.example.traveler.presentation.fragments.Roster"
-        android:label="fragment_roster"
+        android:label="Events list"
         tools:layout="@layout/fragment_roster" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.traveler.presentation.fragments.Settings"
-        android:label="fragment_settings"
+        android:label="Chat"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/unregisteredFragment"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/addPublicationFragment"
         android:name="com.example.traveler.presentation.fragments.AddPublicationFragment"
-        android:label="fragment_add_publication"
+        android:label="Add event"
         tools:layout="@layout/fragment_add_publication2" >
         <action
             android:id="@+id/action_addPublicationFragment_to_mapFragment"
