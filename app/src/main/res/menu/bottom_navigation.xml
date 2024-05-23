@@ -19,6 +19,6 @@
     <item
         android:id="@+id/settingsFragment"
         android:title=""
-        android:icon="@drawable/cogs"
+        android:icon="@drawable/chatd"
         android:iconTint="@color/dark_blue"/>
 </menu>

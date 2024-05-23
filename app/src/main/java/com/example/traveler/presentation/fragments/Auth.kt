@@ -7,15 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.traveler.R
 import com.example.traveler.databinding.FragmentAuthBinding
+import com.example.traveler.presentation.viewmodel.AuthViewModel
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 class Auth : Fragment() {
     private lateinit var binding: FragmentAuthBinding
     private lateinit var navController: NavController
+    private val viewModel: AuthViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,7 +26,6 @@ class Auth : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentAuthBinding.inflate(inflater, container, false)
         return binding.root
     }

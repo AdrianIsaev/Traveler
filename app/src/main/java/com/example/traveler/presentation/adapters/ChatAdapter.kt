@@ -14,8 +14,8 @@ class ChatAdapter : ListAdapter<User, ChatAdapter.ItemHolder>(ItemComparator()) 
         fun bind(user: User) = with(binding) {
             tvMessage.text = user.message
             tvName.text = user.name
+            tvTime.text = user.currentTime
         }
-
         companion object {
             fun create(parent: ViewGroup): ItemHolder {
                 return ItemHolder(

@@ -26,7 +26,7 @@ class Default2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var prefs = requireContext().getSharedPreferences("NAME", android.content.Context.MODE_PRIVATE).edit()
+        val prefs = requireContext().getSharedPreferences("NAME", android.content.Context.MODE_PRIVATE).edit()
         prefs.putString("userName", "Success").commit()
         val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentHost) as NavHostFragment
         val navController = navHostFragment.navController
