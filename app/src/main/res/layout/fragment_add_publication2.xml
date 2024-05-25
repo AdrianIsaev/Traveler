@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:background="@drawable/gradient"
+        android:background="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navA"
         tools:context=".presentation.fragments.AddPublicationFragment">
 
@@ -19,6 +18,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewAdd"
             android:layout_width="match_parent"
+            android:maxHeight="300dp"
             android:layout_height="0dp"
             android:layout_margin="5dp"
             android:scaleType="centerCrop"
@@ -31,24 +31,40 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonAdd"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="5dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/buttonMakePicture"
             android:textColor="@color/white"
             android:background="@drawable/customedittext"
-            android:text="SET IMAGE"
+            android:text="set your picture"
+            app:layout_constraintBottom_toTopOf="@id/editTextAdd"
+           app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAdd" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMakePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:layout_constraintStart_toEndOf="@id/buttonAdd"
+            android:layout_margin="5dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="@color/white"
+            android:background="@drawable/customedittext"
+            android:text="make your picture"
             app:layout_constraintBottom_toTopOf="@id/editTextAdd"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewAdd" />
-
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/editTextAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Добавьте заголовок"
-
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/greyTint"
+            android:hint="add title"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@id/editTextAdd2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +75,11 @@
             android:id="@+id/editTextAdd2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Добавьте описание"
+            android:hint="add description"
+
+            android:textColorHint="@color/greyTint"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toTopOf="@id/editTextAdd3"
@@ -71,7 +91,11 @@
             android:id="@+id/editTextAdd3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Добавьте адрес"
+            android:hint="add address"
+
+            android:textColorHint="@color/greyTint"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/white"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toTopOf="@id/buttonSaveAdd"
@@ -82,10 +106,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSaveAdd"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:background="@drawable/customedittext"
             android:textColor="@color/white"
             android:text="SAVE CHANGES"

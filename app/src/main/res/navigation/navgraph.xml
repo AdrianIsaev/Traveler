@@ -9,7 +9,11 @@
         android:id="@+id/defaultFragment"
         android:name="com.example.traveler.presentation.fragments.Default"
         android:label="Home"
-        tools:layout="@layout/fragment_default" />
+        tools:layout="@layout/fragment_default" >
+        <action
+            android:id="@+id/action_defaultFragment_to_userPublications2"
+            app:destination="@id/userPublications2" />
+    </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.traveler.presentation.fragments.Map"
@@ -18,6 +22,9 @@
         <action
             android:id="@+id/action_mapFragment_to_addPublicationFragment2"
             app:destination="@id/addPublicationFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_userPublications2"
+            app:destination="@id/userPublications2" />
     </fragment>
     <fragment
         android:id="@+id/registeredFragment"
@@ -28,12 +35,23 @@
         android:id="@+id/rosterFragment"
         android:name="com.example.traveler.presentation.fragments.Roster"
         android:label="Events list"
-        tools:layout="@layout/fragment_roster" />
+        tools:layout="@layout/fragment_roster" >
+        <action
+            android:id="@+id/action_rosterFragment_to_commentary"
+            app:destination="@id/commentary" />
+        <action
+            android:id="@+id/action_rosterFragment_to_userPublications2"
+            app:destination="@id/userPublications2" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.traveler.presentation.fragments.Settings"
         android:label="Chat"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_userPublications2"
+            app:destination="@id/userPublications2" />
+    </fragment>
     <fragment
         android:id="@+id/unregisteredFragment"
         android:name="com.example.traveler.presentation.fragments.Unregistered"
@@ -51,6 +69,33 @@
         tools:layout="@layout/fragment_add_publication2" >
         <action
             android:id="@+id/action_addPublicationFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentary"
+        android:name="com.example.traveler.presentation.fragments.Commentary"
+        android:label="fragment_commentary"
+        tools:layout="@layout/fragment_commentary" >
+        <action
+            android:id="@+id/action_commentary_to_rosterFragment"
+            app:destination="@id/rosterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPublications2"
+        android:name="com.example.traveler.presentation.fragments.UserPublications"
+        android:label="fragment_user_publications"
+        tools:layout="@layout/fragment_user_publications" >
+        <action
+            android:id="@+id/action_userPublications2_to_rosterFragment"
+            app:destination="@id/rosterFragment" />
+        <action
+            android:id="@+id/action_userPublications2_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_userPublications2_to_defaultFragment"
+            app:destination="@id/defaultFragment" />
+        <action
+            android:id="@+id/action_userPublications2_to_mapFragment"
             app:destination="@id/mapFragment" />
     </fragment>
 </navigation>

@@ -13,7 +13,7 @@
         <path
             android:pathData="M0 108L50 138C100 168 200 228 300 258C400 288 500 288 600 258C700 228 800 168 900 180C1000 192 1100 276 1150 318L1200 360V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V108Z"
             android:fillType="evenOdd"
-            android:fillColor="#E1F5FE" />
+            android:fillColor="@color/white" />
     </group>
     <group
         android:pivotX="1150"
@@ -24,7 +24,7 @@
         <path
             android:pathData="M0 108L50 138C100 168 200 228 300 258C400 288 500 288 600 258C700 228 800 168 900 180C1000 192 1100 276 1150 318L1200 360V0H1150C1100 0 1000 0 900 0C800 0 700 0 600 0C500 0 400 0 300 0C200 0 100 0 50 0H0V108Z"
             android:fillType="evenOdd"
-            android:fillColor="#80D8FF"
+            android:fillColor="@color/greyTint"
             android:alpha="0.5" />
     </group>
 </vector>

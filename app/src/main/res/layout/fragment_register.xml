@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#18FF08"
+    android:background="@color/black"
     tools:context=".presentation.fragments.Register">
 
 
@@ -36,7 +44,7 @@
         android:gravity="center"
         android:text="Register"
         android:textAllCaps="false"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +60,7 @@
         android:text="Login"
 
         android:textAllCaps="false"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wave_top_left" />
@@ -62,7 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:backgroundTint="@color/dark_blue"
+        android:textColorHint="@color/greyTint"
+        android:backgroundTint="@color/white"
         android:hint="Username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,10 +79,12 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/secondEdit"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
+        android:textColorHint="@color/greyTint"
+        android:textColor="@color/white"
         android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +95,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:backgroundTint="@color/dark_blue"
+        android:textColor="@color/white"
+        android:textColorHint="@color/greyTint"
+        android:backgroundTint="@color/white"
         android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,9 +112,10 @@
         android:gravity="center"
         android:text="sign up"
         android:textAllCaps="false"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thirdEdit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="your publications"
+        android:id="@+id/tool_publications"/>
+    <item android:title="share"
+        android:iconTint="@color/greyTint"
+        android:id="@+id/tool_share"/>
+    <item android:title="logout"
+        android:id="@+id/tool_logout"/>
+</menu>

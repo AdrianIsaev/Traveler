@@ -49,7 +49,7 @@ class Settings : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val database = Firebase.database("https://traveler-bbef7-default-rtdb.europe-west1.firebasedatabase.app/")
         val myRef = database.getReference("message")
-        var prefs =
+        val prefs =
             requireContext().getSharedPreferences("NAME", android.content.Context.MODE_PRIVATE)
         val userName = prefs.getString("nameGlobal", "noName") ?: "noName"
         binding.sendToChatButton.setOnClickListener {
@@ -62,7 +62,7 @@ class Settings : Fragment() {
     }
 
     private fun initRcView() = with(binding) {
-        adapter = ChatAdapter()
+        adapter = ChatAdapter(requireContext())
         chatRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         chatRecyclerView.adapter = adapter
     }

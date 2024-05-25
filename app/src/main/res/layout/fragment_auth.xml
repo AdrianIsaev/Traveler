@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".presentation.fragments.Auth">
 
     <View
@@ -26,7 +34,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:text="Login"
         android:textAllCaps="false"
@@ -43,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:background="@drawable/transparent"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/buttonSmallRegister"
 
@@ -56,7 +64,9 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/greyTint"
+        android:textColor="@color/white"
         android:hint="email or number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +81,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:id="@+id/secondEdit"
-        android:backgroundTint="@color/dark_blue"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/greyTint"
+        android:textColor="@color/white"
         android:hint="password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +91,7 @@
         />
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:text="sign in"
         android:textAllCaps="false"
@@ -92,3 +104,4 @@
         android:gravity="center"
         android:textSize="36dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

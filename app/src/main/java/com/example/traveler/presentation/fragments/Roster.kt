@@ -5,27 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.traveler.data.room.storage.entity.Publication
 import com.example.traveler.databinding.FragmentRosterBinding
-import com.example.traveler.presentation.adapters.ProjectAdapter
+import com.example.traveler.presentation.adapters.RosterAdapter
 import com.example.traveler.presentation.viewmodel.RosterViewModel
-import com.google.common.io.LineReader
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class Roster : Fragment() {
     private lateinit var binding: FragmentRosterBinding
-    private val adapter = ProjectAdapter()
+
     private val viewModel: RosterViewModel by viewModels()
+    private val adapter: RosterAdapter = RosterAdapter(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,5 +51,8 @@ class Roster : Fragment() {
         binding.apply {
             listView.layoutManager = LinearLayoutManager(requireContext())
         }
+    }
+    fun getNavControllerFromRosterFragment() : NavController{
+        return findNavController()
     }
 }

@@ -13,7 +13,7 @@ import com.google.firebase.database.ValueEventListener
 
 class ChatViewModel : ViewModel() {
 
-    fun addMessageToChat(dRef: DatabaseReference, adapter: ListAdapter<User, ChatAdapter.ItemHolder>, chatRecyclerView: RecyclerView) {
+    fun addMessageToChat(dRef: DatabaseReference, adapter: ChatAdapter, chatRecyclerView: RecyclerView) {
         dRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val list = ArrayList<User>()

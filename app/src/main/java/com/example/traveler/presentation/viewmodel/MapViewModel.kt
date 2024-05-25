@@ -6,6 +6,9 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.location.Address
 import android.location.Geocoder
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -52,34 +55,41 @@ open class MapViewModel : ViewModel() {
     }
     fun addPlacemarkOnMap(arrayOfAddressesAndTitles: MutableMap<String, String>, context: Context, map: Map){
         val geocoder = Geocoder(context, Locale.getDefault())
-        val addressesDecoding = mutableListOf<Address>()
-        val arrayOfAddresses= arrayOfAddressesAndTitles.keys
-
+        val addressesDecoding = mutableMapOf<Address, String>()
+        val arrayOfAddresses= arrayOfAddressesAndTitles
+        val arrayOfTitles = arrayOfAddressesAndTitles.values
         if (arrayOfAddresses.isNotEmpty()) {
-            for (address in arrayOfAddresses) {
+            for (address in arrayOfAddresses.keys) {
                 try {
                     val results = geocoder.getFromLocationName(address, 1)
                     if (results!!.isNotEmpty()) {
-                        addressesDecoding.add(results?.get(0)!!)
+                        addressesDecoding.put(results?.get(0)!!, arrayOfAddresses.get(address).toString()
+                        )
                     }
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
             }
         }
-        if (addressesDecoding.size > 0){
-            for (address in addressesDecoding){
-                val point = Point(address.latitude, address.longitude)
+        if (addressesDecoding.keys.size > 0) {
+            for (address in addressesDecoding) {
+                val point = Point(address.key.latitude, address.key.longitude)
+                val testPoint = Point(address.key.latitude - 0.0001, address.key.longitude - 0.0001)
+
                 val placemark = map.mapObjects.addPlacemark(point)
-                placemark.setTextStyle(TextStyle().setColor(Color.RED))
+
                 placemark.opacity = 0.5f
-                val vectorDrawable = ContextCompat.getDrawable(context, R.drawable.human_male_female_child)
-                val vectorBitmap = Bitmap.createBitmap(vectorDrawable!!.intrinsicWidth, vectorDrawable!!.intrinsicHeight, Bitmap.Config.ARGB_8888)
-                val canvas = Canvas(vectorBitmap)
-                vectorDrawable.setBounds(0, 0, canvas.width, canvas.height)
-                vectorDrawable.draw(canvas)
-                placemark.setIcon(ImageProvider.fromBitmap(vectorBitmap))
-                placemark.setText("111")
+                val vectorDrawable = ContextCompat.getDrawable(context, R.drawable.map_source)
+                vectorDrawable?.let { drawable ->
+                    drawable.setTint(Color.RED)
+                    val vectorBitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
+                    val canvas = Canvas(vectorBitmap)
+                    drawable.setBounds(0, 0, canvas.width, canvas.height)
+                    drawable.draw(canvas)
+                    placemark.setIcon(ImageProvider.fromBitmap(vectorBitmap))
+                }
+                placemark.setText(address.value)
+                placemark.useAnimation()
                 placemark.isDraggable = true
                 map.move(CameraPosition(point, 15.0f, 0.0f, 0.0f))
             }

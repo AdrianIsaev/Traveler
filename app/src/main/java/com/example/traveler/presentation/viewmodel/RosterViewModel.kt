@@ -1,5 +1,6 @@
 package com.example.traveler.presentation.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.traveler.data.room.storage.entity.Publication
 import com.google.firebase.Firebase
@@ -19,4 +20,5 @@ class RosterViewModel: ViewModel() {
         }
         return arrayOfPublications
     }
+    //var likeButtonFlag: MutableLiveData<Int> = MutableLiveData()
 }

@@ -30,7 +30,7 @@ class Auth : Fragment() {
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var prefs = requireContext().getSharedPreferences("NAME", Context.MODE_PRIVATE)
+        val prefs = requireContext().getSharedPreferences("NAME", Context.MODE_PRIVATE).edit()
         /*if (prefs.getString("userName", "Denied") == "Success") {
             findNavController().navigate(R.id.action_auth_to_default2)
         }*/
@@ -50,6 +50,7 @@ class Auth : Fragment() {
                         for (document in it) {
                             if (document.getString("email") == userEmail.text.toString()) {
                                 if (document.getString("password") == userPassword.text.toString()) {
+                                    prefs.putString("nameGlobal", document.getString("name").toString()).commit()
                                     navController.navigate(R.id.action_auth_to_default2)
                                 }
                             }

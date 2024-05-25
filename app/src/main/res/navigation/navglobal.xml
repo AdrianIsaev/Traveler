@@ -9,7 +9,14 @@
         android:id="@+id/default2"
         android:name="com.example.traveler.presentation.fragments.Default2"
         android:label="fragment_default2"
-        tools:layout="@layout/fragment_default2" />
+        tools:layout="@layout/fragment_default2" >
+        <action
+            android:id="@+id/action_default2_to_auth"
+            app:destination="@id/auth" />
+        <action
+            android:id="@+id/action_default2_to_userPublications"
+            app:destination="@id/userPublications" />
+    </fragment>
     <fragment
         android:id="@+id/auth"
         android:name="com.example.traveler.presentation.fragments.Auth"
@@ -32,6 +39,15 @@
             app:destination="@id/auth" />
         <action
             android:id="@+id/action_register_to_default2"
+            app:destination="@id/default2" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPublications"
+        android:name="com.example.traveler.presentation.fragments.UserPublications"
+        android:label="fragment_user_publications"
+        tools:layout="@layout/fragment_user_publications" >
+        <action
+            android:id="@+id/action_userPublications_to_default2"
             app:destination="@id/default2" />
     </fragment>
 
