@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mapFragment_to_userPublications2"
             app:destination="@id/userPublications2" />
+        <action
+            android:id="@+id/action_mapFragment_to_rosterFragment"
+            app:destination="@id/rosterFragment" />
     </fragment>
     <fragment
         android:id="@+id/registeredFragment"
@@ -42,6 +45,12 @@
         <action
             android:id="@+id/action_rosterFragment_to_userPublications2"
             app:destination="@id/userPublications2" />
+        <action
+            android:id="@+id/action_rosterFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_rosterFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -51,6 +60,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_userPublications2"
             app:destination="@id/userPublications2" />
+        <action
+            android:id="@+id/action_settingsFragment_to_rosterFragment"
+            app:destination="@id/rosterFragment" />
     </fragment>
     <fragment
         android:id="@+id/unregisteredFragment"

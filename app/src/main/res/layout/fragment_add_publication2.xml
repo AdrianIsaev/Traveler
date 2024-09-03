@@ -57,6 +57,23 @@
             app:layout_constraintBottom_toTopOf="@id/editTextAdd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewAdd" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextAdd3"
+                android:hint="add address"
+                android:textColor="@color/white"
+
+                app:layout_constraintBottom_toTopOf="@id/buttonSaveAdd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAdd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/greyTint"
+                android:backgroundTint="@color/white"
+                />
+
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/editTextAdd"
             android:layout_width="match_parent"
@@ -66,17 +83,17 @@
             android:textColorHint="@color/greyTint"
             android:hint="add title"
             android:layout_marginBottom="20dp"
+
             app:layout_constraintBottom_toTopOf="@id/editTextAdd2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextAdd2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="add description"
-
             android:textColorHint="@color/greyTint"
             android:backgroundTint="@color/white"
             android:textColor="@color/white"
@@ -87,21 +104,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextAdd" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/editTextAdd3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="add address"
-
-            android:textColorHint="@color/greyTint"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/white"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toTopOf="@id/buttonSaveAdd"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextAdd2" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSaveAdd"

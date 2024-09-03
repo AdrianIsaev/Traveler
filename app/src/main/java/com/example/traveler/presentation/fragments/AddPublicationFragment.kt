@@ -54,7 +54,9 @@ class AddPublicationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navA).visibility = View.GONE
         myStorageImageRefs = FirebaseStorage.getInstance().getReference("Images")
-        val prefs = requireContext().getSharedPreferences("NAME", android.content.Context.MODE_PRIVATE)
+
+        val prefs = viewModel.getMainSharedPreferences(requireContext())
+
         author = prefs.getString("nameGlobal", "noName")?: "noName"
         binding.buttonSaveAdd.setOnClickListener {
 
@@ -65,11 +67,11 @@ class AddPublicationFragment : Fragment() {
             val numberOfComments = 0
             val uniqueId = UUID.randomUUID().toString()
             val publication = Publication(uniqueId, title, author, description, numberOfLikes, numberOfComments, address, factUri.toString())
+
             val db = FirebaseFirestore.getInstance()
             db.collection("list_items")
                 .add(publication)
                 .addOnSuccessListener {
-                    Toast.makeText(requireContext(), "lolipop", LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_addPublicationFragment_to_mapFragment)
                 }
                 .addOnFailureListener {
@@ -104,6 +106,8 @@ class AddPublicationFragment : Fragment() {
             // Обработка ошибки при загрузке изображения
         }
     }
+
+
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
@@ -124,8 +128,6 @@ class AddPublicationFragment : Fragment() {
             val data = result.data
             imageUri = data?.data!!
             binding.imageViewAdd.setImageURI(imageUri)
-
-
             uploadImage()
         }
     }

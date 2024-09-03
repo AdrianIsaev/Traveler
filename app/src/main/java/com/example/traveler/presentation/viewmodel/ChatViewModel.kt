@@ -4,14 +4,18 @@ package com.example.traveler.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.traveler.data.core.AccessToMainSharedPreferencesInterface
 import com.example.traveler.data.room.storage.entity.User
 import com.example.traveler.presentation.adapters.ChatAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
-class ChatViewModel : ViewModel() {
+class ChatViewModel : ViewModel(), AccessToMainSharedPreferencesInterface {
 
     fun addMessageToChat(dRef: DatabaseReference, adapter: ChatAdapter, chatRecyclerView: RecyclerView) {
         dRef.addValueEventListener(object : ValueEventListener {
@@ -28,6 +32,7 @@ class ChatViewModel : ViewModel() {
             }
         })
     }
-
-
+    fun getCurrentTime(): String{
+        return SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+    }
 }

@@ -12,6 +12,4 @@ data class Publication(
     val numberOfComments: Int,
     val address: String,
     val uri: String
-){
-    constructor(): this("","", "", "", 0, 0, "", "")
-}
+)

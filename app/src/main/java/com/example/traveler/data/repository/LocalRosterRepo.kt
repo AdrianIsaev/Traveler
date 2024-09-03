@@ -11,25 +11,25 @@ class LocalRosterRepo(context: Context) {
     private val appDatabase: AppDatabase = AppDatabase.getDatabase(context)
     private val executor: Executor = Executors.newSingleThreadExecutor()
 
-    fun insertRosterData(localRosterModel: LocalRosterModel){
+    suspend fun insertRosterData(localRosterModel: LocalRosterModel){
         executor.execute{
             appDatabase.localRosterDao().insertRosterData(localRosterModel)
         }
     }
 
-    fun updateRosterData(localRosterModel: LocalRosterModel){
+    suspend fun updateRosterData(localRosterModel: LocalRosterModel){
         executor.execute{
             appDatabase.localRosterDao().updateRosterData(localRosterModel)
         }
     }
 
-    fun deleteRosterData(localRosterModel: LocalRosterModel){
+    suspend fun deleteRosterData(localRosterModel: LocalRosterModel){
         executor.execute{
             appDatabase.localRosterDao().deleteRosterData(localRosterModel)
         }
     }
 
-    fun getAllRosterDataLive(): LiveData<List<LocalRosterModel>>{
+    suspend fun getAllRosterDataLive(): LiveData<List<LocalRosterModel>>{
         return appDatabase.localRosterDao().getAllRosterDataLive()
     }
 

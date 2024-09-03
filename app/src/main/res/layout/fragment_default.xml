@@ -53,4 +53,16 @@
         android:layout_height="0dp"
         android:src="@drawable/nature">
     </androidx.appcompat.widget.AppCompatImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="MOST IMPORTANT"
+        android:textColor="@color/red"
+        app:layout_constraintTop_toTopOf="@id/imageFilterView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/mostImportant"
+        android:background="@drawable/transparent_background"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>

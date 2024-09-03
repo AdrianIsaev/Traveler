@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.traveler.R
+import com.example.traveler.data.core.RosterAdapterNavigationInterface
 import com.example.traveler.data.room.storage.entity.Publication
 import com.example.traveler.databinding.FragmentRosterBinding
 import com.example.traveler.presentation.adapters.RosterAdapter
@@ -18,11 +19,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class Roster : Fragment() {
+class Roster : Fragment(), RosterAdapterNavigationInterface {
     private lateinit var binding: FragmentRosterBinding
-
     private val viewModel: RosterViewModel by viewModels()
-    private val adapter: RosterAdapter = RosterAdapter(this)
+    private val adapter: RosterAdapter = RosterAdapter(this, this)
+    override fun onShareClick(roster: Publication, bundle: Bundle) {
+        findNavController().navigate(R.id.action_rosterFragment_to_settingsFragment, bundle)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,8 +54,5 @@ class Roster : Fragment() {
         binding.apply {
             listView.layoutManager = LinearLayoutManager(requireContext())
         }
-    }
-    fun getNavControllerFromRosterFragment() : NavController{
-        return findNavController()
     }
 }

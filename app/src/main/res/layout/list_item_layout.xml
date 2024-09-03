@@ -5,10 +5,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewRoster"
-
     app:layout_constraintTop_toTopOf="parent"
     android:layout_marginHorizontal="5dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginBottom="5dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:cardElevation="180dp"
@@ -31,9 +30,11 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
+            android:paddingStart="3dp"
+
             android:background="@drawable/transparent_background"
             android:text="Выставка достижений"
             android:textColor="@color/white"
@@ -132,6 +133,7 @@
             />
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
+            android:id="@+id/navigationView"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textColor="@color/white"
