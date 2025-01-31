@@ -12,3 +12,4 @@
 * Листинг топовых ивентов.
 
 ## Демонстрация функционала
+[![Смотреть видео](https://img.youtube.com/vi/dPwVfoH6N20/0.jpg)](https://www.youtube.com/watch?v=dPwVfoH6N20)
